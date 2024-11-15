@@ -7,7 +7,7 @@ extends Entity
 func _ready() -> void:
 	pass 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var x_direction: float = Input.get_axis("left","right")
 	var y_direction: float = Input.get_axis("up","down")
 	var direction: Vector2 = Vector2(x_direction,y_direction).normalized()
