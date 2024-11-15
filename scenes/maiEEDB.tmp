@@ -1991,9 +1991,7 @@ enabled = false
 tile_set = SubResource("TileSet_jkjmu")
 
 [node name="TileMapLayer3" type="TileMapLayer" parent="TileMaps"]
-tile_map_data = PackedByteArray("AAD9//3/AAA6AAAAAAD9//7/AAA6AAEAAAD+//3/AAA7AAAAAAD+//7/AAA7AAEAAAABAPz/AAA6AAAAAAABAP3/AAA6AAEAAAACAPz/AAA7AAAAAAACAP3/AAA7AAEAAAAAAAEAAAA+AAAAAAAAAAIAAAA+AAEAAAABAAEAAAA/AAAAAAABAAIAAAA/AAEAAAD7////AAA6AAAAAAD7/wAAAAA6AAEAAAD8////AAA7AAAAAAD8/wAAAAA7AAEAAAD2////AAA6AAAAAAD2/wAAAAA6AAEAAAD3////AAA7AAAAAAD3/wAAAAA7AAEAAAA=")
 enabled = false
-tile_set = SubResource("TileSet_jkjmu")
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(-106, 3)
