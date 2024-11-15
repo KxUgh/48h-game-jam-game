@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bjy2g2pt7vcj3"]
+[gd_scene format=3 uid="uid://d3twklk8sykkb"]
 
 [node name="Rebind" type="HBoxContainer"]
 anchors_preset = -1

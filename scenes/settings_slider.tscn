@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b6iqsayk81inb"]
+[gd_scene format=3 uid="uid://bst76hy1x4rdi"]
 
 [node name="settings_slider" type="VBoxContainer"]
 anchors_preset = 15
