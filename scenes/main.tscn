@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvnwhsr3huqmj"]
+
+[ext_resource type="Script" path="res://scripts/entity.gd" id="1_ikyoa"]
+[ext_resource type="Texture2D" uid="uid://o68a8bjvx1yl" path="res://assets/icon.svg" id="2_dev1j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jblvy"]
+radius = 32.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Entity" type="CharacterBody2D" parent="."]
+script = ExtResource("1_ikyoa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entity"]
+shape = SubResource("CircleShape2D_jblvy")
+
+[node name="Sprite2D" type="Sprite2D" parent="Entity"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_dev1j")
+
+[node name="Camera2D" type="Camera2D" parent="."]
