@@ -13,7 +13,7 @@ wall_min_slide_angle = 0.0
 script = ExtResource("1_0q23h")
 nav_agent = NodePath("NavigationAgent2D")
 nav_timer = NodePath("NavTimer")
-speed = 200.0
+speed = 50.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_ttnv6")
@@ -25,5 +25,5 @@ texture = ExtResource("2_w5xib")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
 [node name="NavTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.25
 autostart = true
