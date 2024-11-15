@@ -23,3 +23,8 @@ func take_damage(damage: float) -> void:
 	health -= damage
 	health = clampf(health,0,max_health)
 	print(health)
+	
+func heal(amount: float) -> void:
+	health += amount
+	health = clampf(health,0,max_health)
+	print(health)
