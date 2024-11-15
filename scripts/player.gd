@@ -18,3 +18,8 @@ func _physics_process(_delta: float) -> void:
 		sword.attack(position,get_global_mouse_position())
 	
 	move_and_slide()
+	
+func take_damage(damage: float) -> void:
+	health -= damage
+	health = clampf(health,0,max_health)
+	print(health)

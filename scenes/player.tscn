@@ -10,10 +10,13 @@ radius = 16.0
 height = 32.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sword") groups=["Players"]]
+collision_layer = 2
+collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_8x3jl")
 sword = NodePath("Sword")
 speed = 100.0
+max_health = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_uqn3e")
@@ -25,3 +28,4 @@ texture = ExtResource("2_ur10b")
 [node name="Sword" parent="." node_paths=PackedStringArray("weapon_owner") instance=ExtResource("3_d6vd4")]
 slash = ExtResource("4_1v1bj")
 weapon_owner = NodePath("..")
+damage = 2.0
