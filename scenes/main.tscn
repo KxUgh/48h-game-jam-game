@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvnwhsr3huqmj"]
+[gd_scene load_steps=5 format=3 uid="uid://bu2vv3yml2k7d"]
 
 [ext_resource type="Script" path="res://scripts/entity.gd" id="1_ikyoa"]
 [ext_resource type="Texture2D" uid="uid://o68a8bjvx1yl" path="res://assets/icon.svg" id="2_dev1j"]
+[ext_resource type="PackedScene" uid="uid://by2vub21vtxyo" path="res://scenes/player.tscn" id="3_t447v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jblvy"]
 radius = 32.0
@@ -19,3 +20,6 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_dev1j")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("3_t447v")]
+position = Vector2(-106, 2)
