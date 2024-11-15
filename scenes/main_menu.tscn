@@ -1,12 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dct4xvjivp1jr"]
+[gd_scene load_steps=6 format=3 uid="uid://hk4g02x0pyh7"]
 
-[ext_resource type="Theme" uid="uid://dwk1p53yoy1hp" path="res://assets/theme.tres" id="1_1vmj7"]
+[ext_resource type="Theme" uid="uid://btae84e240kr" path="res://assets/theme.tres" id="1_1vmj7"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_h6ljb"]
 [ext_resource type="Texture2D" uid="uid://o68a8bjvx1yl" path="res://assets/icon.svg" id="1_kv2id"]
-[ext_resource type="PackedScene" uid="uid://bu5isc74wt57b" path="res://scenes/options_menu.tscn" id="3_xd4sc"]
-
-[sub_resource type="Resource" id="Resource_x6s82"]
-metadata/__load_path__ = "res://scenes/main.tscn"
+[ext_resource type="PackedScene" uid="uid://bu2vv3yml2k7d" path="res://scenes/main.tscn" id="3_870wq"]
+[ext_resource type="PackedScene" path="res://scenes/options_menu.tscn" id="3_xd4sc"]
 
 [node name="Main_Menu" type="Control" node_paths=PackedStringArray("start_button", "options_button", "exit_button", "options_menu", "margin_containter")]
 layout_mode = 3
@@ -20,7 +18,7 @@ script = ExtResource("1_h6ljb")
 start_button = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Start_Button")
 options_button = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Options_Button")
 exit_button = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Exit_Button")
-start_level = SubResource("Resource_x6s82")
+start_level = ExtResource("3_870wq")
 options_menu = NodePath("Options_Menu")
 margin_containter = NodePath("MarginContainer")
 

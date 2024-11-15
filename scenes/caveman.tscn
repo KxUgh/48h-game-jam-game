@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://i08j2b1vco1c"]
+
+[ext_resource type="Script" path="res://scripts/caveman.gd" id="1_0q23h"]
+[ext_resource type="Texture2D" uid="uid://o68a8bjvx1yl" path="res://assets/icon.svg" id="2_w5xib"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ttnv6"]
+radius = 8.0
+height = 32.0
+
+[node name="Caveman" type="CharacterBody2D" node_paths=PackedStringArray("nav_agent", "nav_timer")]
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_0q23h")
+nav_agent = NodePath("NavigationAgent2D")
+nav_timer = NodePath("NavTimer")
+speed = 200.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ttnv6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.125, 0.25)
+texture = ExtResource("2_w5xib")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="NavTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
