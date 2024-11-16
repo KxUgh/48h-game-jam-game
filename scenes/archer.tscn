@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://crvonej7n4k7i"]
+
+[ext_resource type="Script" path="res://scripts/arrow_shooter.gd" id="1_do7yj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1r14k"]
+
+[node name="Archer" type="CharacterBody2D"]
+script = ExtResource("1_do7yj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1r14k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
