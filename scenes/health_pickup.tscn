@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bq7oyaqns0ca5"]
+
+[ext_resource type="Script" path="res://scripts/health_pickup.gd" id="1_mvxrq"]
+[ext_resource type="Texture2D" uid="uid://cnm1e6wqfb252" path="res://assets/item_atlas.png" id="2_h6i7v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pmllq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvno3"]
+atlas = ExtResource("2_h6i7v")
+region = Rect2(80, 240, 16, 16)
+
+[node name="HealthPickup" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_mvxrq")
+heal_amount = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pmllq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_uvno3")

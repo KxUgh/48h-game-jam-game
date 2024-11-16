@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://i08j2b1vco1c" path="res://scenes/caveman.tscn" id="2_to06s"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="2_y1ld6"]
 [ext_resource type="PackedScene" uid="uid://by2vub21vtxyo" path="res://scenes/player.tscn" id="3_t447v"]
+[ext_resource type="PackedScene" uid="uid://bq7oyaqns0ca5" path="res://scenes/health_pickup.tscn" id="5_u1lpl"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ulspu"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -2008,3 +2009,6 @@ position = Vector2(-106, 2)
 
 [node name="Caveman" parent="." instance=ExtResource("2_to06s")]
 position = Vector2(110, 0)
+
+[node name="HealthPickup" parent="." instance=ExtResource("5_u1lpl")]
+position = Vector2(0, 65)

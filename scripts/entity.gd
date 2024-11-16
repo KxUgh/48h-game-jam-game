@@ -6,3 +6,6 @@ extends CharacterBody2D
 
 func take_damage(_damage: float) -> void:
 	pass
+	
+func heal(_amount: float) -> void:
+	pass
