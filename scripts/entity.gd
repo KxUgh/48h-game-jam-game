@@ -13,10 +13,11 @@ func _physics_process(delta: float) -> void:
 	since_last_damage += delta
 	since_last_attack += delta
 
-func take_damage(_damage: float) -> void:
+func take_damage(_damage: float) -> bool:
 	if since_last_damage < damage_delay:
-		return
+		return false
 	since_last_damage = 0
+	return true
 	
 func heal(_amount: float) -> void:
 	pass

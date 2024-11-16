@@ -20,11 +20,13 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
-func take_damage(damage: float) -> void:
-	super(damage)
+func take_damage(damage: float) -> bool:
+	if not super(damage):
+		return false
 	health -= damage
 	health = clampf(health,0,max_health)
 	print(health)
+	return true
 	
 func heal(amount: float) -> void:
 	health += amount
