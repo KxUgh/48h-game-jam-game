@@ -1,6 +1,8 @@
 class_name Player
 extends Entity
 
+signal health_changed()
+
 @export var sword: Weapon
 @export var speed: float
 
@@ -25,10 +27,10 @@ func take_damage(damage: float) -> bool:
 		return false
 	health -= damage
 	health = clampf(health,0,max_health)
-	print(health)
+	health_changed.emit()
 	return true
 	
 func heal(amount: float) -> void:
 	health += amount
 	health = clampf(health,0,max_health)
-	print(health)
+	health_changed.emit()

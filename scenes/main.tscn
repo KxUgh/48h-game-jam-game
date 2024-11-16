@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://bu2vv3yml2k7d"]
+[gd_scene load_steps=57 format=4 uid="uid://bu2vv3yml2k7d"]
 
 [ext_resource type="Texture2D" uid="uid://cdve845fvcwuf" path="res://assets/OuterTileset.png" id="1_1irw7"]
 [ext_resource type="Script" path="res://scripts/tile_maps.gd" id="1_4y28u"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scripts/navigation_layer.gd" id="4_c6f0d"]
 [ext_resource type="PackedScene" uid="uid://bq7oyaqns0ca5" path="res://scenes/health_pickup.tscn" id="5_u1lpl"]
 [ext_resource type="PackedScene" uid="uid://dljdaakwoupl3" path="res://scenes/archer.tscn" id="9_iih70"]
+[ext_resource type="PackedScene" uid="uid://b6k18m1n1bsu7" path="res://scenes/health_bar.tscn" id="10_ksldo"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ulspu"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -2022,3 +2023,12 @@ position = Vector2(0, 65)
 [node name="Archer" parent="." node_paths=PackedStringArray("target") instance=ExtResource("9_iih70")]
 position = Vector2(-109, 57)
 target = NodePath("../Player")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Health Bar" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("10_ksldo")]
+offset_left = 244.0
+offset_top = 8.0
+offset_right = -12.0
+offset_bottom = -156.0
+player = NodePath("../../Player")
