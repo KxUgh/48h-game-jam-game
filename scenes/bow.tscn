@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhdpsswacswrp"]
+
+[ext_resource type="Script" path="res://scripts/bow.gd" id="1_t64b1"]
+[ext_resource type="PackedScene" uid="uid://5ne3gt7lpwqx" path="res://scenes/arrow.tscn" id="2_m4g83"]
+
+[node name="Bow" type="Node2D"]
+script = ExtResource("1_t64b1")
+shot = ExtResource("2_m4g83")
+damage = 3.0

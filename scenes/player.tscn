@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_8x3jl"]
 [ext_resource type="Texture2D" uid="uid://o68a8bjvx1yl" path="res://assets/icon.svg" id="2_ur10b"]
-[ext_resource type="PackedScene" uid="uid://difqlskth1v0q" path="res://scenes/sword.tscn" id="3_d6vd4"]
-[ext_resource type="PackedScene" uid="uid://cgcoauqh6nqty" path="res://scenes/club_attack.tscn" id="4_1v1bj"]
+[ext_resource type="PackedScene" uid="uid://kvhgs413g3gg" path="res://scenes/sword.tscn" id="3_d6vd4"]
+[ext_resource type="PackedScene" path="res://scenes/club_attack.tscn" id="4_1v1bj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uqn3e"]
 radius = 16.0

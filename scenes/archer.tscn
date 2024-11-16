@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://crvonej7n4k7i"]
+
+[ext_resource type="Script" path="res://scripts/archer.gd" id="1_do7yj"]
+[ext_resource type="PackedScene" uid="uid://bhdpsswacswrp" path="res://scenes/bow.tscn" id="2_0pvea"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1r14k"]
+
+[node name="Archer" type="CharacterBody2D" node_paths=PackedStringArray("bow")]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_do7yj")
+bow = NodePath("Bow")
+max_health = 5.0
+attack_cooldown = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1r14k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Bow" parent="." node_paths=PackedStringArray("weapon_owner") instance=ExtResource("2_0pvea")]
+weapon_owner = NodePath("..")
