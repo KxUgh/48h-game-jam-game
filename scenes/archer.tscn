@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://dljdaakwoupl3"]
+[gd_scene load_steps=24 format=3 uid="uid://dljdaakwoupl3"]
 
 [ext_resource type="Script" path="res://scripts/archer.gd" id="1_do7yj"]
 [ext_resource type="PackedScene" path="res://scenes/bow.tscn" id="2_0pvea"]
 [ext_resource type="Texture2D" uid="uid://epqiqmejy4k2" path="res://assets/rogue_idle.png" id="2_nguwo"]
 [ext_resource type="Texture2D" uid="uid://dbhv3kx2vp814" path="res://assets/rogue_attack.png" id="2_qvwp1"]
+[ext_resource type="Texture2D" uid="uid://bocttkekbqwsr" path="res://assets/rogue_hit.png" id="3_bat05"]
 [ext_resource type="Texture2D" uid="uid://cqwnx1wht7tte" path="res://assets/rogue_walk.png" id="4_a4f3t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e3ecy"]
@@ -17,6 +18,22 @@ region = Rect2(32, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_b5m3r"]
 atlas = ExtResource("2_qvwp1")
 region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3t6kn"]
+atlas = ExtResource("3_bat05")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bx1q2"]
+atlas = ExtResource("3_bat05")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjd5j"]
+atlas = ExtResource("3_bat05")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4jds"]
+atlas = ExtResource("3_bat05")
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rwbe6"]
 atlas = ExtResource("2_nguwo")
@@ -68,6 +85,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_3t6kn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bx1q2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjd5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4jds")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_rwbe6")
 }, {
 "duration": 1.0,
@@ -115,17 +149,15 @@ desired_distance = 100.0
 speed = 40.0
 max_health = 5.0
 attack_cooldown = 2.0
+damage_delay = 1.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8jxr7")
-animation = &"attack"
+animation = &"hit"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1r14k")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.148437, 0.15625)
 
 [node name="Bow" parent="." node_paths=PackedStringArray("weapon_owner") instance=ExtResource("2_0pvea")]
 weapon_owner = NodePath("..")
