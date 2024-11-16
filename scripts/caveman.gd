@@ -47,15 +47,17 @@ func update_nav_agent() -> void:
 	nav_agent.target_position = target.position
 	
 func can_attack() -> bool:
-	return super()
+	return super() and position.distance_to(target.position) < attack_distance
 
-func take_damage(damage: float) -> void:
-	super(damage)
+func take_damage(damage: float) -> bool:
+	if not super(damage):
+		return false
 	request_animation_change("hit")
 	health -= damage
 	health = clampf(health,0,max_health)
 	if health == 0:
 		die()
+	return true
 	
 func die() -> void:
 	queue_free()
