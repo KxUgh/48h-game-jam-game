@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://scripts/navigation_layer.gd" id="4_c6f0d"]
 [ext_resource type="PackedScene" uid="uid://bq7oyaqns0ca5" path="res://scenes/health_pickup.tscn" id="5_u1lpl"]
 [ext_resource type="PackedScene" uid="uid://dljdaakwoupl3" path="res://scenes/archer.tscn" id="9_iih70"]
-[ext_resource type="PackedScene" uid="uid://b6k18m1n1bsu7" path="res://scenes/health_bar.tscn" id="10_jvini"]
+[ext_resource type="PackedScene" path="res://scenes/health_bar.tscn" id="10_jvini"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ulspu"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -1984,7 +1984,7 @@ navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_4ggdw")
 sources/2 = SubResource("TileSetScenesCollectionSource_xmdss")
 
-[node name="Node2D" type="Node2D"]
+[node name="RootNode" type="Node2D"]
 
 [node name="TileMaps" type="Node2D" parent="." node_paths=PackedStringArray("level_layers")]
 script = ExtResource("1_4y28u")

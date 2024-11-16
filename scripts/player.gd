@@ -5,6 +5,7 @@ signal health_changed()
 
 @export var sword: Weapon
 @export var speed: float
+@export var acceleration: float
 
 func _ready() -> void:
 	pass 
@@ -15,7 +16,7 @@ func _physics_process(delta: float) -> void:
 	var y_direction: float = Input.get_axis("up","down")
 	var direction: Vector2 = Vector2(x_direction,y_direction).normalized()
 	
-	velocity = speed * direction
+	velocity = lerp(velocity,speed * direction,acceleration * delta)
 	
 	if Input.is_action_just_pressed("attack"):
 		sword.attack(position,get_global_mouse_position())

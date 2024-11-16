@@ -16,6 +16,7 @@ motion_mode = 1
 script = ExtResource("1_8x3jl")
 sword = NodePath("Sword")
 speed = 100.0
+acceleration = 12.0
 max_health = 10.0
 damage_delay = 1.0
 
