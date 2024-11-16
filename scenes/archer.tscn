@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://dljdaakwoupl3"]
 
 [ext_resource type="Script" path="res://scripts/archer.gd" id="1_do7yj"]
-[ext_resource type="PackedScene" path="res://scenes/bow.tscn" id="2_0pvea"]
+[ext_resource type="PackedScene" uid="uid://bhdpsswacswrp" path="res://scenes/bow.tscn" id="2_0pvea"]
 [ext_resource type="Texture2D" uid="uid://epqiqmejy4k2" path="res://assets/rogue_idle.png" id="2_nguwo"]
 [ext_resource type="Texture2D" uid="uid://dbhv3kx2vp814" path="res://assets/rogue_attack.png" id="2_qvwp1"]
 [ext_resource type="Texture2D" uid="uid://cqwnx1wht7tte" path="res://assets/rogue_walk.png" id="4_a4f3t"]
