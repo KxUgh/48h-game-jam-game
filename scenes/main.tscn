@@ -2014,7 +2014,6 @@ position = Vector2(-106, 2)
 
 [node name="Caveman" parent="." instance=ExtResource("2_to06s")]
 position = Vector2(110, 0)
-attack_cooldown = 0.0
 
 [node name="HealthPickup" parent="." instance=ExtResource("5_u1lpl")]
 position = Vector2(0, 65)
