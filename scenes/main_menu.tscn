@@ -45,13 +45,13 @@ theme_override_constants/margin_bottom = 12
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 12
 
 [node name="Separator" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 10
 text = "DIE OR BE DOUGHT"
 horizontal_alignment = 1
 
@@ -88,7 +88,8 @@ z_index = 1
 custom_minimum_size = Vector2(120, 30)
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
-text = "Exit the Exit"
+text = "Exit the Exit
+"
 
 [node name="Options_Menu" parent="." instance=ExtResource("3_xd4sc")]
 visible = false
