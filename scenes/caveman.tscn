@@ -1,14 +1,48 @@
-[gd_scene load_steps=16 format=3 uid="uid://i08j2b1vco1c"]
+[gd_scene load_steps=26 format=3 uid="uid://i08j2b1vco1c"]
 
 [ext_resource type="Script" path="res://scripts/caveman.gd" id="1_0q23h"]
 [ext_resource type="Texture2D" uid="uid://fvh8kpgwa3qn" path="res://assets/caveman_idle.png" id="2_ldgtn"]
+[ext_resource type="Texture2D" uid="uid://dgxwf7dng4wyi" path="res://assets/caveman_attack.png" id="2_vpquf"]
 [ext_resource type="Texture2D" uid="uid://b04fvwk80p3q7" path="res://assets/caveman_walk.png" id="3_1lo48"]
+[ext_resource type="Texture2D" uid="uid://caudn3n72emrj" path="res://assets/caveman_hit.png" id="3_3twui"]
 [ext_resource type="PackedScene" uid="uid://difqlskth1v0q" path="res://scenes/sword.tscn" id="3_nvu0n"]
 [ext_resource type="PackedScene" uid="uid://cgcoauqh6nqty" path="res://scenes/club_attack.tscn" id="4_ik4oq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ttnv6"]
 radius = 8.0
 height = 32.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7hb5"]
+atlas = ExtResource("2_vpquf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knlws"]
+atlas = ExtResource("2_vpquf")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbg6x"]
+atlas = ExtResource("2_vpquf")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq8tc"]
+atlas = ExtResource("2_vpquf")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwdlb"]
+atlas = ExtResource("3_3twui")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8551"]
+atlas = ExtResource("3_3twui")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4ry2"]
+atlas = ExtResource("3_3twui")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4fgh"]
+atlas = ExtResource("3_3twui")
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dvavv"]
 atlas = ExtResource("2_ldgtn")
@@ -44,6 +78,40 @@ region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oy70h"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7hb5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_knlws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbg6x")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_jq8tc")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwdlb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8551")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4ry2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4fgh")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dvavv")
@@ -89,16 +157,18 @@ nav_agent = NodePath("NavigationAgent2D")
 nav_timer = NodePath("NavTimer")
 sprite = NodePath("AnimatedSprite2D")
 club = NodePath("Sword")
-attack_cooldown = 2.0
+attack_distance = 40.0
 speed = 50.0
 max_health = 10.0
+attack_cooldown = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_ttnv6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_oy70h")
-animation = &"walk"
+animation = &"idle"
+autoplay = "idle"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
