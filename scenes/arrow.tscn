@@ -7,7 +7,11 @@
 size = Vector2(6, 4)
 
 [node name="Arrow" type="Area2D"]
+top_level = true
+collision_mask = 3
 script = ExtResource("1_pd3qy")
+speed = 400.0
+max_duration = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(12, 0)

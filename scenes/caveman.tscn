@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://dgxwf7dng4wyi" path="res://assets/caveman_attack.png" id="2_vpquf"]
 [ext_resource type="Texture2D" uid="uid://b04fvwk80p3q7" path="res://assets/caveman_walk.png" id="3_1lo48"]
 [ext_resource type="Texture2D" uid="uid://caudn3n72emrj" path="res://assets/caveman_hit.png" id="3_3twui"]
-[ext_resource type="PackedScene" uid="uid://difqlskth1v0q" path="res://scenes/sword.tscn" id="3_nvu0n"]
-[ext_resource type="PackedScene" uid="uid://cgcoauqh6nqty" path="res://scenes/club_attack.tscn" id="4_ik4oq"]
+[ext_resource type="PackedScene" uid="uid://kvhgs413g3gg" path="res://scenes/sword.tscn" id="3_nvu0n"]
+[ext_resource type="PackedScene" path="res://scenes/club_attack.tscn" id="4_ik4oq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ttnv6"]
 radius = 8.0
