@@ -21,9 +21,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func take_damage(damage: float) -> void:
-	if since_last_damage < damage_delay:
-		return
-	since_last_damage = 0
+	super(damage)
 	health -= damage
 	health = clampf(health,0,max_health)
 	print(health)
