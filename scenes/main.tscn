@@ -1,7 +1,9 @@
-[gd_scene load_steps=47 format=4 uid="uid://bu2vv3yml2k7d"]
+[gd_scene load_steps=49 format=4 uid="uid://bu2vv3yml2k7d"]
 
 [ext_resource type="Texture2D" uid="uid://cdve845fvcwuf" path="res://assets/OuterTileset.png" id="1_1irw7"]
 [ext_resource type="Script" path="res://scripts/tile_maps.gd" id="1_4y28u"]
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_ud8oe"]
+[ext_resource type="PackedScene" uid="uid://epqooxq4iwgs" path="res://scenes/death_screen.tscn" id="2_krwgu"]
 [ext_resource type="PackedScene" uid="uid://i08j2b1vco1c" path="res://scenes/caveman.tscn" id="2_to06s"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="2_y1ld6"]
 [ext_resource type="Texture2D" uid="uid://bv10a2rin5nxp" path="res://assets/dungeontemple/A2_32x32.png" id="3_gkgkm"]
@@ -974,7 +976,10 @@ sources/1 = SubResource("TileSetAtlasSource_iis1x")
 sources/3 = SubResource("TileSetAtlasSource_1tcrp")
 sources/4 = SubResource("TileSetAtlasSource_ycwmw")
 
-[node name="RootNode" type="Node2D"]
+[node name="RootNode" type="Node2D" node_paths=PackedStringArray("player")]
+script = ExtResource("1_ud8oe")
+player = NodePath("Player")
+death_screen = ExtResource("2_krwgu")
 
 [node name="TileMaps" type="Node2D" parent="." node_paths=PackedStringArray("level_layers")]
 script = ExtResource("1_4y28u")
