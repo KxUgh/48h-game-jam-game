@@ -19,7 +19,6 @@ func _physics_process(delta: float) -> void:
 	var next_path_position: Vector2 = nav_agent.get_next_path_position()
 	var direction: Vector2 = position.direction_to(next_path_position)
 	
-	print(position.distance_to(target.position))
 	if position.distance_to(target.position) > 40:
 		velocity = direction * speed
 	else:
@@ -33,9 +32,18 @@ func find_target() -> void:
 	var players = get_tree().get_nodes_in_group("Players")
 	if len(players) > 0:
 		target = players[0]
-		
+
 func update_nav_agent() -> void:
 	nav_agent.target_position = target.position
 	
 func can_attack() -> bool:
 	return since_last_attack > attack_cooldown
+
+func take_damage(damage: float) -> void:
+	health -= damage
+	health = clampf(health,0,max_health)
+	if health == 0:
+		die()
+	
+func die() -> void:
+	queue_free()
