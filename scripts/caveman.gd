@@ -2,6 +2,7 @@ extends Enemy
 
 @export var nav_agent: NavigationAgent2D
 @export var nav_timer: Timer
+@export var sprite: AnimatedSprite2D
 @export var club: Weapon
 @export var attack_cooldown: float
 
@@ -26,6 +27,16 @@ func _physics_process(delta: float) -> void:
 		if can_attack():
 			club.attack(position,target.position)
 			since_last_attack = 0
+	
+	print(scale.x)
+	if velocity.x != 0:
+		sprite.scale.x = sign(velocity.x)
+	
+	if velocity.length() > 0:
+		sprite.play("walk")
+	else:
+		sprite.play("idle")
+	
 	move_and_slide()
 
 func find_target() -> void:
