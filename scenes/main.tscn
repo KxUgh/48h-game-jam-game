@@ -2019,6 +2019,5 @@ position = Vector2(110, 0)
 [node name="HealthPickup" parent="." instance=ExtResource("5_u1lpl")]
 position = Vector2(0, 65)
 
-[node name="Archer" parent="." node_paths=PackedStringArray("target") instance=ExtResource("9_iih70")]
+[node name="Archer" parent="." instance=ExtResource("9_iih70")]
 position = Vector2(-109, 57)
-target = NodePath("../Player")
