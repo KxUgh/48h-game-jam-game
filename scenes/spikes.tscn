@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cq5l76fn4q7n4" path="res://assets/spikes.png" id="2_ovbcm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4p8s"]
-size = Vector2(16, 16)
+size = Vector2(32, 32)
 
 [node name="Spikes" type="Area2D"]
 collision_mask = 2
@@ -15,4 +15,5 @@ damage = 3.0
 shape = SubResource("RectangleShape2D_a4p8s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
 texture = ExtResource("2_ovbcm")
