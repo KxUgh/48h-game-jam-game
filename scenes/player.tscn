@@ -1,23 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://by2vub21vtxyo"]
+[gd_scene load_steps=5 format=3 uid="uid://by2vub21vtxyo"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_8x3jl"]
 [ext_resource type="Texture2D" uid="uid://o68a8bjvx1yl" path="res://assets/icon.svg" id="2_ur10b"]
-[ext_resource type="PackedScene" uid="uid://kvhgs413g3gg" path="res://scenes/sword.tscn" id="3_d6vd4"]
-[ext_resource type="PackedScene" uid="uid://cgcoauqh6nqty" path="res://scenes/club_attack.tscn" id="4_1v1bj"]
+[ext_resource type="PackedScene" uid="uid://dh13r0t68njda" path="res://scenes/wand.tscn" id="3_088xm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uqn3e"]
 radius = 16.0
 height = 32.0
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sword") groups=["Players"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("wand") groups=["Players"]]
 collision_layer = 2
 collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_8x3jl")
-sword = NodePath("Sword")
-speed = 100.0
+wand = NodePath("Wand")
+base_speed = 100.0
 acceleration = 12.0
+casting_time = 0.7
 max_health = 10.0
+attack_cooldown = 2.0
 damage_delay = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -27,7 +28,6 @@ shape = SubResource("CapsuleShape2D_uqn3e")
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_ur10b")
 
-[node name="Sword" parent="." node_paths=PackedStringArray("weapon_owner") instance=ExtResource("3_d6vd4")]
-slash = ExtResource("4_1v1bj")
+[node name="Wand" parent="." node_paths=PackedStringArray("weapon_owner") instance=ExtResource("3_088xm")]
 weapon_owner = NodePath("..")
-damage = 2.0
+damage = 5.0

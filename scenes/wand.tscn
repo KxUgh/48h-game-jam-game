@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dh13r0t68njda"]
+
+[ext_resource type="Script" path="res://scripts/wand.gd" id="1_3cq4l"]
+[ext_resource type="PackedScene" uid="uid://37glos6x4amo" path="res://scenes/beam.tscn" id="2_6y0sv"]
+
+[node name="Wand" type="Node2D"]
+script = ExtResource("1_3cq4l")
+spell = ExtResource("2_6y0sv")
