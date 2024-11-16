@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" path="res://scenes/spikes.tscn" id="3_pkbf4"]
 [ext_resource type="PackedScene" uid="uid://by2vub21vtxyo" path="res://scenes/player.tscn" id="3_t447v"]
 [ext_resource type="Script" path="res://scripts/navigation_layer.gd" id="4_c6f0d"]
-[ext_resource type="PackedScene" uid="uid://bq7oyaqns0ca5" path="res://scenes/health_pickup.tscn" id="5_u1lpl"]
+[ext_resource type="PackedScene" path="res://scenes/health_pickup.tscn" id="5_u1lpl"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ulspu"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
