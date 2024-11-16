@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=3 uid="uid://37glos6x4amo"]
+
+[ext_resource type="Script" path="res://scripts/beam.gd" id="1_e8fkk"]
+[ext_resource type="Texture2D" uid="uid://d1s8lhlk85jrv" path="res://assets/beam.png" id="2_r0k81"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ooub3"]
+radius = 9.0
+height = 18.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehtok"]
+atlas = ExtResource("2_r0k81")
+region = Rect2(0, 0, 32, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6m7vb"]
+atlas = ExtResource("2_r0k81")
+region = Rect2(32, 0, 32, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12qnp"]
+atlas = ExtResource("2_r0k81")
+region = Rect2(64, 0, 32, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7w8a6"]
+atlas = ExtResource("2_r0k81")
+region = Rect2(96, 0, 32, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omdq2"]
+atlas = ExtResource("2_r0k81")
+region = Rect2(128, 0, 32, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcvt8"]
+atlas = ExtResource("2_r0k81")
+region = Rect2(160, 0, 32, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmaq5"]
+atlas = ExtResource("2_r0k81")
+region = Rect2(192, 0, 32, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k72ab"]
+atlas = ExtResource("2_r0k81")
+region = Rect2(224, 0, 32, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_28lr4"]
+animations = [{
+"frames": [{
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_ehtok")
+}, {
+"duration": 8.0,
+"texture": SubResource("AtlasTexture_6m7vb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12qnp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7w8a6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omdq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcvt8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmaq5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k72ab")
+}],
+"loop": false,
+"name": &"default",
+"speed": 25.0
+}]
+
+[node name="Beam" type="Area2D" node_paths=PackedStringArray("sprite")]
+top_level = true
+monitoring = false
+script = ExtResource("1_e8fkk")
+sprite = NodePath("AnimatedSprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ooub3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -48)
+sprite_frames = SubResource("SpriteFrames_28lr4")
+autoplay = "default"
+frame = 7
+frame_progress = 1.0

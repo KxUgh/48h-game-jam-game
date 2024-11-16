@@ -15,8 +15,11 @@ func _use_tile_data_runtime_update(coords: Vector2i) -> bool:
 		if not other_layer.enabled:
 			return false
 		if coords in other_layer.get_used_cells():
-			return true
+			var tile_data = other_layer.get_cell_tile_data(coords)
+			if tile_data != null:
+				if tile_data.get_collision_polygons_count(0) > 0:
+					return true
 	return false
 
-func _tile_data_runtime_update(coords: Vector2i, tile_data: TileData) -> void:
+func _tile_data_runtime_update(_coords: Vector2i, tile_data: TileData) -> void:
 	tile_data.set_navigation_polygon(0,null)
