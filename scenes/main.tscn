@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" path="res://scenes/health_pickup.tscn" id="5_u1lpl"]
 [ext_resource type="Texture2D" uid="uid://txd3dsmwsatl" path="res://assets/dungeontemple/B32x32.png" id="5_uvg6y"]
 [ext_resource type="PackedScene" uid="uid://dljdaakwoupl3" path="res://scenes/archer.tscn" id="9_iih70"]
+[ext_resource type="PackedScene" uid="uid://b6k18m1n1bsu7" path="res://scenes/health_bar.tscn" id="10_jvini"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ulspu"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -2292,3 +2293,12 @@ position = Vector2(0, 65)
 
 [node name="Archer" parent="." instance=ExtResource("9_iih70")]
 position = Vector2(-109, 57)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Health Bar" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("10_jvini")]
+offset_left = 251.0
+offset_top = 3.0
+offset_right = -5.0
+offset_bottom = -161.0
+player = NodePath("../../Player")
