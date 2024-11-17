@@ -1,18 +1,185 @@
-[gd_scene load_steps=5 format=3 uid="uid://by2vub21vtxyo"]
+[gd_scene load_steps=29 format=3 uid="uid://by2vub21vtxyo"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_8x3jl"]
-[ext_resource type="Texture2D" uid="uid://o68a8bjvx1yl" path="res://assets/icon.svg" id="2_ur10b"]
 [ext_resource type="PackedScene" uid="uid://dh13r0t68njda" path="res://scenes/wand.tscn" id="3_088xm"]
+[ext_resource type="Texture2D" uid="uid://dcjk81sobxmie" path="res://assets/wizard_attack.png" id="4_dqlru"]
+[ext_resource type="Texture2D" uid="uid://ds1vyfd27loed" path="res://assets/wizard_hit.png" id="5_2xg0t"]
+[ext_resource type="Texture2D" uid="uid://d0yd06dkvboxb" path="res://assets/wizard_idle.png" id="6_hw0bk"]
+[ext_resource type="Texture2D" uid="uid://5eusb52m6jhx" path="res://assets/wizard_walk.png" id="7_c4yfs"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uqn3e"]
-radius = 16.0
-height = 32.0
+radius = 6.0
+height = 25.0
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("wand") groups=["Players"]]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdxni"]
+atlas = ExtResource("4_dqlru")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kaax"]
+atlas = ExtResource("4_dqlru")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxhcp"]
+atlas = ExtResource("4_dqlru")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8628"]
+atlas = ExtResource("4_dqlru")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05s0h"]
+atlas = ExtResource("4_dqlru")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5h24"]
+atlas = ExtResource("5_2xg0t")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ei75m"]
+atlas = ExtResource("5_2xg0t")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3ys2"]
+atlas = ExtResource("5_2xg0t")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ekmu"]
+atlas = ExtResource("5_2xg0t")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_po5ne"]
+atlas = ExtResource("5_2xg0t")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emkgt"]
+atlas = ExtResource("6_hw0bk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yq8ie"]
+atlas = ExtResource("6_hw0bk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqshc"]
+atlas = ExtResource("6_hw0bk")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0sh7"]
+atlas = ExtResource("6_hw0bk")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trv2e"]
+atlas = ExtResource("6_hw0bk")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqnuk"]
+atlas = ExtResource("6_hw0bk")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3s8t"]
+atlas = ExtResource("7_c4yfs")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0iki1"]
+atlas = ExtResource("7_c4yfs")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aft78"]
+atlas = ExtResource("7_c4yfs")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ci2n3"]
+atlas = ExtResource("7_c4yfs")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wmhf5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdxni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8kaax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxhcp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8628")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05s0h")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5h24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ei75m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3ys2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ekmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_po5ne")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_emkgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yq8ie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqshc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0sh7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trv2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqnuk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3s8t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0iki1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aft78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ci2n3")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "wand") groups=["Players"]]
 collision_layer = 2
 collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_8x3jl")
+sprite = NodePath("AnimatedSprite2D")
 wand = NodePath("Wand")
 base_speed = 100.0
 acceleration = 12.0
@@ -22,12 +189,14 @@ attack_cooldown = 2.0
 damage_delay = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
 shape = SubResource("CapsuleShape2D_uqn3e")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_ur10b")
 
 [node name="Wand" parent="." node_paths=PackedStringArray("weapon_owner") instance=ExtResource("3_088xm")]
 weapon_owner = NodePath("..")
 damage = 5.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wmhf5")
+animation = &"hit"
+autoplay = "idle"

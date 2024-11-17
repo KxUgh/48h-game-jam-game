@@ -16,9 +16,9 @@
 [ext_resource type="PackedScene" path="res://scenes/caveman_spawner.tscn" id="7_eafu8"]
 [ext_resource type="PackedScene" uid="uid://cv04oau5k6h22" path="res://scenes/archer_spawner.tscn" id="8_i1d3c"]
 [ext_resource type="PackedScene" uid="uid://dljdaakwoupl3" path="res://scenes/archer.tscn" id="9_iih70"]
-[ext_resource type="PackedScene" uid="uid://djoqsd0l6a6tu" path="res://scenes/cannoneer_spawner.tscn" id="9_j2t2v"]
+[ext_resource type="PackedScene" uid="uid://cyviaylrxbsqr" path="res://scenes/cannoneer_spawner.tscn" id="9_j2t2v"]
 [ext_resource type="PackedScene" uid="uid://b6k18m1n1bsu7" path="res://scenes/health_bar.tscn" id="10_jvini"]
-[ext_resource type="PackedScene" uid="uid://b347urc82s4l7" path="res://scenes/cannoneer.tscn" id="18_6218l"]
+[ext_resource type="PackedScene" uid="uid://kktxsuylt1vm" path="res://scenes/cannoneer.tscn" id="18_6218l"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_yyi8j"]
 vertices = PackedVector2Array(16, 16, -16, 16, -16, -16, 16, -16)

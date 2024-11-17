@@ -1,10 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://b347urc82s4l7"]
+[gd_scene load_steps=21 format=3 uid="uid://kktxsuylt1vm"]
 
 [ext_resource type="Script" path="res://scripts/archer.gd" id="1_v8oqm"]
-[ext_resource type="Texture2D" path="res://assets/cannon_attack.png" id="2_npirs"]
-[ext_resource type="Texture2D" path="res://assets/cannon_hit.png" id="3_y5mvf"]
-[ext_resource type="Texture2D" path="res://assets/cannon_idle.png" id="4_x8x1p"]
-[ext_resource type="PackedScene" uid="uid://cb0we8uiyaneu" path="res://scenes/cannon.tscn" id="6_1s78o"]
+[ext_resource type="Texture2D" uid="uid://csb5h5hwq3d7j" path="res://assets/cannon_attack.png" id="2_npirs"]
+[ext_resource type="Texture2D" uid="uid://c1o37ademol7r" path="res://assets/cannon_hit.png" id="3_y5mvf"]
+[ext_resource type="Texture2D" uid="uid://peijt6xpripo" path="res://assets/cannon_idle.png" id="4_x8x1p"]
+[ext_resource type="PackedScene" uid="uid://csh1ag7o72uyi" path="res://scenes/cannon.tscn" id="6_1s78o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bmq8c"]
 atlas = ExtResource("2_npirs")

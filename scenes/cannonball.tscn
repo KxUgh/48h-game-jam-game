@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1io717w8lvgw"]
+[gd_scene load_steps=4 format=3 uid="uid://cl1f2pxxngx43"]
 
 [ext_resource type="Script" path="res://scripts/cannonball.gd" id="1_eradc"]
-[ext_resource type="Texture2D" path="res://assets/cannonball.png" id="2_83swe"]
+[ext_resource type="Texture2D" uid="uid://bfeftjb4y34we" path="res://assets/cannonball.png" id="2_83swe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nwna2"]
 size = Vector2(6, 4)
