@@ -138,12 +138,13 @@ attack_cooldown = 5.0
 damage_delay = 1.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_8jxr7")
 animation = &"walk"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-18, 0)
+position = Vector2(-18, -16)
 shape = SubResource("CapsuleShape2D_bmtew")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
@@ -154,4 +155,5 @@ wait_time = 0.25
 autostart = true
 
 [node name="Cannon" parent="." node_paths=PackedStringArray("weapon_owner") instance=ExtResource("6_1s78o")]
+position = Vector2(25, -23)
 weapon_owner = NodePath("..")

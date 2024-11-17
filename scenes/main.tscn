@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://bu2vv3yml2k7d"]
+[gd_scene load_steps=50 format=4 uid="uid://bu2vv3yml2k7d"]
 
 [ext_resource type="Texture2D" uid="uid://cdve845fvcwuf" path="res://assets/OuterTileset.png" id="1_1irw7"]
 [ext_resource type="Script" path="res://scripts/tile_maps.gd" id="1_4y28u"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bqwlx6l8fu1i4" path="res://scenes/caveman_spawner.tscn" id="7_eafu8"]
 [ext_resource type="PackedScene" uid="uid://cv04oau5k6h22" path="res://scenes/archer_spawner.tscn" id="8_i1d3c"]
 [ext_resource type="PackedScene" uid="uid://cyviaylrxbsqr" path="res://scenes/cannoneer_spawner.tscn" id="9_j2t2v"]
+[ext_resource type="PackedScene" uid="uid://x6jr8agxusp7" path="res://scenes/potion_spawner.tscn" id="10_grif5"]
 [ext_resource type="PackedScene" path="res://scenes/health_bar.tscn" id="10_jvini"]
 [ext_resource type="PackedScene" uid="uid://dsy2lgb7l1s7w" path="res://scenes/score.tscn" id="18_rafta"]
 
@@ -43,15 +44,9 @@ agent_radius = 0.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_u6y15"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_kfxr6"]
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_tobgk"]
-
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_n7v1v"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_huauo"]
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_vyae3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ggdw"]
 texture = ExtResource("1_1irw7")
@@ -117,12 +112,6 @@ texture_region_size = Vector2i(32, 32)
 33:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_osp4f")
 34:0/0 = 0
 34:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_osp4f")
-35:0/0 = 0
-35:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_kfxr6")
-36:0/0 = 0
-36:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_kfxr6")
-37:0/0 = 0
-37:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_kfxr6")
 0:1/0 = 0
 0:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_yyi8j")
 1:1/0 = 0
@@ -184,12 +173,6 @@ texture_region_size = Vector2i(32, 32)
 33:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_osp4f")
 34:1/0 = 0
 34:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_osp4f")
-35:1/0 = 0
-35:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_tobgk")
-36:1/0 = 0
-36:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_tobgk")
-37:1/0 = 0
-37:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_tobgk")
 0:2/0 = 0
 0:2/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_yyi8j")
 1:2/0 = 0
@@ -624,13 +607,23 @@ texture_region_size = Vector2i(32, 32)
 38:4/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_n7v1v")
 38:3/0 = 0
 38:3/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_n7v1v")
-38:0/0 = 0
-38:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_vyae3")
-39:0/0 = 0
-39:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_vyae3")
 38:1/size_in_atlas = Vector2i(2, 2)
 38:1/0 = 0
 38:1/0/texture_origin = Vector2i(-16, 16)
+38:1/0/y_sort_origin = 4
+38:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8.24308, -1.78891, 22.4492, -1.43814, 23.3262, 4.70032, 8.76923, 4.70032)
+35:0/0 = 0
+36:0/size_in_atlas = Vector2i(2, 1)
+36:0/0 = 0
+36:0/0/texture_origin = Vector2i(-16, 0)
+36:0/0/y_sort_origin = 5
+35:1/size_in_atlas = Vector2i(3, 1)
+35:1/0 = 0
+35:1/0/y_sort_origin = 5
+38:0/size_in_atlas = Vector2i(2, 1)
+38:0/0 = 0
+38:0/0/texture_origin = Vector2i(-16, 0)
+38:0/0/y_sort_origin = 6
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_vde8s"]
 vertices = PackedVector2Array(16, 16, -16, 16, -16, -16, 16, -16)
@@ -781,6 +774,8 @@ scenes/2/scene = ExtResource("7_eafu8")
 scenes/3/scene = ExtResource("8_i1d3c")
 scenes/4/scene = ExtResource("9_j2t2v")
 scenes/5/scene = ExtResource("5_u1lpl")
+scenes/6/scene = ExtResource("10_grif5")
+scenes/6/display_placeholder = ExtResource("10_grif5")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mj60d"]
 
@@ -997,17 +992,17 @@ script = ExtResource("4_c6f0d")
 metadata/_edit_lock_ = true
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="TileMaps"]
-tile_map_data = PackedByteArray("AAD3//3/AgAAAAAAAQD2//3/AgAAAAAAAQD1//3/AgAAAAAAAQD0//3/AgAAAAAAAQDz//3/AgAAAAAAAQDy//3/AgAAAAAAAQDx//3/AgAAAAAAAQA=")
+tile_map_data = PackedByteArray("AAD2//7/AgAAAAAAAQD7//f/AgAAAAAAAQDy//X/AgAAAAAAAQDx//n/AgAAAAAAAQDt//z/AgAAAAAAAQDu//f/AgAAAAAAAQDt/wAAAgAAAAAAAQDw//7/AgAAAAAAAQDz/wAAAgAAAAAAAQD5////AgAAAAAAAQD///v/AgAAAAAAAQADAPz/AgAAAAAAAQAPAP3/AgAAAAAAAQANAPn/AgAAAAAAAQAIAPv/AgAAAAAAAQAJAPj/AgAAAAAAAQAGAAAAAgAAAAAAAQAKAP7/AgAAAAAAAQALAAMAAgAAAAAAAQAOAAAAAgAAAAAAAQAPAAQAAgAAAAAAAQAMAAYAAgAAAAAAAQAJAAgAAgAAAAAAAQABAAsAAgAAAAAAAQAFAAgAAgAAAAAAAQD+/wgAAgAAAAAAAQD7/wsAAgAAAAAAAQD8/wsAAgAAAAAAAQDz/wwAAgAAAAAAAQDu/wkAAgAAAAAAAQD1/wUAAgAAAAAAAQDt/wQAAgAAAAAAAQD8/wQAAgAAAAAAAQD9//v/AgAAAAAAAQD5//z/AgAAAAAAAQD3//j/AgAAAAAAAQAPAAsAAgAAAAAAAQABAAQAAgAAAAAAAQD//wQAAgAAAAAAAQA=")
 tile_set = SubResource("TileSet_jkjmu")
 metadata/_edit_lock_ = true
 
 [node name="TileMapLayer3" type="TileMapLayer" parent="TileMaps"]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AADw//n/BAAFAAEAAADz//f/BAAFAAEAAAD2//n/BAAFAAEAAADw//f/BAAGAAEAAADz//n/BAAGAAEAAAD2//f/BAAGAAEAAADw//v/BAAGAAEAAAD2//v/BAAGAAEAAADz//v/BAAFAAEAAADu/wYAAwACAAgAAADu/wcAAQAAAAMAAADx/wkAAwADAAwAAADx/woAAwADAA0AAADy/wYAAwACAAgAAADy/wcAAQAAAAMAAADy/wgAAwAEAAsAAADy/wkAAwAEAAwAAADy/woAAwAEAA0AAADz/wkAAwAFAAwAAADz/woAAwAFAA0AAAD2/wYAAwACAAgAAAD2/wcAAQAAAAMAAAAFAPb/AwAEAAQAAAAFAPf/AwAEAAUAAAAFAPn/AwAEAAQAAAAFAPr/AwAEAAUAAAAFAPz/AwAEAAQAAAAFAP3/AwAEAAUAAAAKAPb/AwAEAAQAAAAKAPf/AwAEAAUAAAAKAPn/AwAEAAQAAAAKAPr/AwAEAAUAAAAKAPz/AwAEAAQAAAAKAP3/AwAEAAUAAAAAAPb/AwAEAAQAAAAAAPf/AwAEAAUAAAAAAPn/AwAEAAQAAAAAAPr/AwAEAAUAAAAAAPz/AwAEAAQAAAAAAP3/AwAEAAUAAAABAPb/AwAFAAQAAAABAPf/AwAFAAUAAAABAPn/AwAFAAQAAAABAPr/AwAFAAUAAAABAPz/AwAFAAQAAAABAP3/AwAFAAUAAAAGAPb/AwAFAAQAAAAGAPf/AwAFAAUAAAAGAPn/AwAFAAQAAAAGAPr/AwAFAAUAAAAGAPz/AwAFAAQAAAAGAP3/AwAFAAUAAAALAPb/AwAFAAQAAAALAPf/AwAFAAUAAAALAPn/AwAFAAQAAAALAPr/AwAFAAUAAAALAPz/AwAFAAQAAAALAP3/AwAFAAUAAAAFAAYAAAAjAAAAAAAHAAQAAAAjAAAAAAALAAcAAAAjAAAAAAANAAYAAAAkAAAAAAAOAAYAAAAlAAAAAAABAAMAAAAkAAAAAAACAAMAAAAlAAAAAAACAAsAAAAkAAAAAAADAAsAAAAlAAAAAAABAAkAAAAmAAEAAAAHAAkAAAAmAAEAAAAMAAQAAAAmAAEAAAAFAAIAAAAmAAEAAAAHAAYAAAAmAAEAAAD//wcAAAAmAAEAAAD+/wIAAAAmAAEAAAADAAQAAAAmAAEAAAAMAAkAAAAmAAEAAAALAAsAAAAmAAEAAAAJAAwAAAAmAAEAAAAHAAwAAAAmAAEAAAAIAAsAAAAmAAEAAAACAAgAAAAmAAEAAAD//woAAAAmAAEAAAD//wUAAAAmAAEAAAA=")
+tile_map_data = PackedByteArray("AADw//n/BAAFAAEAAADz//f/BAAFAAEAAAD2//n/BAAFAAEAAADw//f/BAAGAAEAAADz//n/BAAGAAEAAAD2//f/BAAGAAEAAADw//v/BAAGAAEAAAD2//v/BAAGAAEAAADz//v/BAAFAAEAAADu/wYAAwACAAgAAADu/wcAAQAAAAMAAADx/wkAAwADAAwAAADx/woAAwADAA0AAADy/wYAAwACAAgAAADy/wcAAQAAAAMAAADy/wgAAwAEAAsAAADy/wkAAwAEAAwAAADy/woAAwAEAA0AAADz/wkAAwAFAAwAAADz/woAAwAFAA0AAAD2/wYAAwACAAgAAAD2/wcAAQAAAAMAAAAFAPb/AwAEAAQAAAAFAPf/AwAEAAUAAAAFAPn/AwAEAAQAAAAFAPr/AwAEAAUAAAAFAPz/AwAEAAQAAAAFAP3/AwAEAAUAAAAKAPb/AwAEAAQAAAAKAPf/AwAEAAUAAAAKAPn/AwAEAAQAAAAKAPr/AwAEAAUAAAAKAPz/AwAEAAQAAAAKAP3/AwAEAAUAAAAAAPb/AwAEAAQAAAAAAPf/AwAEAAUAAAAAAPn/AwAEAAQAAAAAAPr/AwAEAAUAAAAAAPz/AwAEAAQAAAAAAP3/AwAEAAUAAAABAPb/AwAFAAQAAAABAPf/AwAFAAUAAAABAPn/AwAFAAQAAAABAPr/AwAFAAUAAAABAPz/AwAFAAQAAAABAP3/AwAFAAUAAAAGAPb/AwAFAAQAAAAGAPf/AwAFAAUAAAAGAPn/AwAFAAQAAAAGAPr/AwAFAAUAAAAGAPz/AwAFAAQAAAAGAP3/AwAFAAUAAAALAPb/AwAFAAQAAAALAPf/AwAFAAUAAAALAPn/AwAFAAQAAAALAPr/AwAFAAUAAAALAPz/AwAFAAQAAAALAP3/AwAFAAUAAAAFAAYAAAAjAAAAAAAHAAQAAAAjAAAAAAALAAcAAAAjAAAAAAANAAYAAAAkAAAAAAACAAsAAAAkAAAAAAABAAkAAAAmAAEAAAAHAAkAAAAmAAEAAAAMAAQAAAAmAAEAAAAFAAIAAAAmAAEAAAAHAAYAAAAmAAEAAAD//wcAAAAmAAEAAAD+/wIAAAAmAAEAAAADAAQAAAAmAAEAAAAMAAkAAAAmAAEAAAALAAsAAAAmAAEAAAAJAAwAAAAmAAEAAAAHAAwAAAAmAAEAAAAIAAsAAAAmAAEAAAACAAgAAAAmAAEAAAD//woAAAAmAAEAAAD//wUAAAAmAAEAAAABAAEAAAAjAAEAAAADAAYAAAAkAAAAAAD+/wYAAAAjAAAAAAALAAIAAAAjAAAAAAAJAAkAAAAkAAAAAAADAAoAAAAkAAAAAAD//wgAAAAkAAAAAAAKAAYAAAAmAAAAAAAAAAMAAAAmAAAAAAA=")
 tile_set = SubResource("TileSet_jkjmu")
 
 [node name="EnemyWave1" type="TileMapLayer" parent="TileMaps"]
-tile_map_data = PackedByteArray("AADy/wsAAgAAAAAABQABAAQAAgAAAAAAAgACAAIAAgAAAAAAAgA=")
+tile_map_data = PackedByteArray("AADy/wsAAgAAAAAABQABAAQAAgAAAAAAAgACAAIAAgAAAAAAAgD6//n/AgAAAAAABgAOAPz/AgAAAAAABgAJAAMAAgAAAAAABgD5/wkAAgAAAAAABgDs/wAAAgAAAAAABgA=")
 tile_set = SubResource("TileSet_jkjmu")
 metadata/_edit_lock_ = true
 

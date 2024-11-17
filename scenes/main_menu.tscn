@@ -2,9 +2,9 @@
 
 [ext_resource type="Theme" uid="uid://btae84e240kr" path="res://assets/theme.tres" id="1_1vmj7"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_h6ljb"]
-[ext_resource type="Texture2D" uid="uid://o68a8bjvx1yl" path="res://assets/icon.svg" id="1_kv2id"]
 [ext_resource type="PackedScene" uid="uid://bu2vv3yml2k7d" path="res://scenes/main.tscn" id="3_870wq"]
 [ext_resource type="PackedScene" uid="uid://bu5isc74wt57b" path="res://scenes/options_menu.tscn" id="3_xd4sc"]
+[ext_resource type="Texture2D" uid="uid://dxd1hhihu8gqk" path="res://assets/background.png" id="4_ttfb8"]
 
 [node name="Main_Menu" type="Control" node_paths=PackedStringArray("start_button", "options_button", "exit_button", "options_menu", "margin_containter")]
 layout_mode = 3
@@ -29,7 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_kv2id")
+texture = ExtResource("4_ttfb8")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -52,7 +52,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "DIE OR BE DOUGHT"
+text = "Time Invaders"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
@@ -73,7 +73,7 @@ z_index = 1
 custom_minimum_size = Vector2(120, 30)
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
-text = "Game the Game"
+text = "Play"
 
 [node name="Options_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 visible = false
@@ -88,8 +88,7 @@ z_index = 1
 custom_minimum_size = Vector2(120, 30)
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
-text = "Exit the Exit
-"
+text = "Exit"
 
 [node name="Options_Menu" parent="." instance=ExtResource("3_xd4sc")]
 visible = false

@@ -196,10 +196,10 @@ shape = SubResource("CapsuleShape2D_uqn3e")
 [node name="Wand" parent="." node_paths=PackedStringArray("weapon_owner") instance=ExtResource("3_088xm")]
 position = Vector2(0, -16)
 weapon_owner = NodePath("..")
-damage = 5.0
+damage = 7.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_wmhf5")
 animation = &"hit"
 autoplay = "idle"
+offset = Vector2(0, -16)

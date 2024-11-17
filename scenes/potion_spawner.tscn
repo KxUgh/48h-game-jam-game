@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://x6jr8agxusp7"]
+
+[ext_resource type="Script" path="res://scripts/spawner.gd" id="1_5tfqp"]
+[ext_resource type="PackedScene" uid="uid://bq7oyaqns0ca5" path="res://scenes/health_pickup.tscn" id="2_q1lh5"]
+
+[node name="CavemanSpawner" type="Node2D"]
+script = ExtResource("1_5tfqp")
+scene_to_spawn = ExtResource("2_q1lh5")
