@@ -8,6 +8,7 @@ extends Enemy
 var target: Player
 
 func _ready() -> void:
+	nav_agent.velocity_computed.connect(_on_velocity_computed)
 	find_target()
 	nav_timer.timeout.connect(update_nav_agent)
 	since_last_attack = 0
@@ -19,9 +20,9 @@ func _physics_process(delta: float) -> void:
 	var direction: Vector2 = position.direction_to(next_path_position)
 	
 	if position.distance_to(next_path_position) > 15:
-		velocity = direction * speed
+		nav_agent.set_velocity(direction * speed)
 	else:
-		velocity = Vector2.ZERO
+		nav_agent.set_velocity(Vector2.ZERO)
 	
 	
 	sprite.scale.x = sign(target.position.x - position.x)
@@ -61,6 +62,7 @@ func take_damage(damage: float) -> bool:
 	return true
 	
 func die() -> void:
+	SignalBus.enemy_killed.emit()
 	queue_free()
 	
 func request_animation_change(requested_animation: String) -> void:
@@ -75,3 +77,6 @@ func request_animation_change(requested_animation: String) -> void:
 	if sprite.animation not in unskippable_anims:
 		sprite.play(requested_animation)
 		return
+		
+func _on_velocity_computed(safe_velocity: Vector2) -> void:
+	velocity = safe_velocity

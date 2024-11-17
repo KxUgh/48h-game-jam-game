@@ -140,7 +140,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Caveman" type="CharacterBody2D" node_paths=PackedStringArray("nav_agent", "nav_timer", "sprite", "club")]
+[node name="Caveman" type="CharacterBody2D" node_paths=PackedStringArray("nav_agent", "nav_timer", "sprite", "club") groups=["Enemies"]]
 collision_layer = 4
 collision_mask = 3
 motion_mode = 1
@@ -165,6 +165,8 @@ animation = &"hit"
 autoplay = "idle"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+avoidance_enabled = true
+radius = 15.0
 
 [node name="NavTimer" type="Timer" parent="."]
 wait_time = 0.25
