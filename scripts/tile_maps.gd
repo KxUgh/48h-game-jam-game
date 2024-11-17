@@ -12,6 +12,7 @@ func _ready() -> void:
 		layer.enabled = false
 
 func change_level_appearance() -> void:
+	SignalBus.score_changed.emit(level_index+1)
 	if level_index >= len(level_layers):
 		var new_layer: TileMapLayer = level_layers[level_index % original_layer_count].duplicate()
 		add_child(new_layer)
