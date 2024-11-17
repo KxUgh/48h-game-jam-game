@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://daynbfj5kp5sm"]
+
+[node name="Cannoneer" type="CharacterBody2D"]
+position = Vector2(13, 19)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Cannon" type="Node2D" parent="."]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
