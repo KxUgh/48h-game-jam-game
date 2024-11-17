@@ -146,8 +146,8 @@ nav_timer = NodePath("Timer")
 sprite = NodePath("AnimatedSprite2D")
 bow = NodePath("Bow")
 desired_distance = 100.0
-speed = 40.0
-max_health = 5.0
+speed = 45.0
+max_health = 15.0
 attack_cooldown = 2.0
 damage_delay = 1.0
 

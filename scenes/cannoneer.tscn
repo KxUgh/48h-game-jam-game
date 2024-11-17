@@ -120,7 +120,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1r14k"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bmtew"]
+height = 34.0
 
 [node name="Cannoneer" type="CharacterBody2D" node_paths=PackedStringArray("nav_agent", "nav_timer", "sprite", "bow") groups=["Enemies"]]
 collision_layer = 4
@@ -131,9 +132,9 @@ nav_timer = NodePath("Timer")
 sprite = NodePath("AnimatedSprite2D")
 bow = NodePath("Cannon")
 desired_distance = 100.0
-speed = 40.0
-max_health = 5.0
-attack_cooldown = 2.0
+speed = 5.0
+max_health = 25.0
+attack_cooldown = 5.0
 damage_delay = 1.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -142,7 +143,8 @@ animation = &"walk"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_1r14k")
+position = Vector2(-18, 0)
+shape = SubResource("CapsuleShape2D_bmtew")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 avoidance_enabled = true
