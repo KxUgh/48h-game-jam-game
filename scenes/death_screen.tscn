@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://epqooxq4iwgs"]
+[gd_scene load_steps=4 format=3 uid="uid://epqooxq4iwgs"]
 
 [ext_resource type="Script" path="res://scripts/death_screen.gd" id="1_6bppj"]
 [ext_resource type="Theme" uid="uid://btae84e240kr" path="res://assets/theme.tres" id="2_4curc"]
-[ext_resource type="PackedScene" uid="uid://hk4g02x0pyh7" path="res://scenes/main_menu.tscn" id="3_4unqr"]
 [ext_resource type="Texture2D" uid="uid://o68a8bjvx1yl" path="res://assets/icon.svg" id="3_nfdkd"]
 
 [node name="DeathScreen" type="Control" node_paths=PackedStringArray("menu_button", "exit_button")]
@@ -15,7 +14,6 @@ grow_vertical = 2
 theme = ExtResource("2_4curc")
 script = ExtResource("1_6bppj")
 menu_button = NodePath("MarginContainer/VBoxContainer/Button")
-main_menu = ExtResource("3_4unqr")
 exit_button = NodePath("MarginContainer/VBoxContainer/Button2")
 
 [node name="TextureRect" type="TextureRect" parent="."]
