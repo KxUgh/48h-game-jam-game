@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://bu2vv3yml2k7d"]
+[gd_scene load_steps=51 format=4 uid="uid://bu2vv3yml2k7d"]
 
 [ext_resource type="Texture2D" uid="uid://cdve845fvcwuf" path="res://assets/OuterTileset.png" id="1_1irw7"]
 [ext_resource type="Script" path="res://scripts/tile_maps.gd" id="1_4y28u"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://bq7oyaqns0ca5" path="res://scenes/health_pickup.tscn" id="5_u1lpl"]
 [ext_resource type="Texture2D" uid="uid://txd3dsmwsatl" path="res://assets/dungeontemple/B32x32.png" id="5_uvg6y"]
 [ext_resource type="Texture2D" uid="uid://chescnt1putfh" path="res://assets/futuretileset.png" id="6_ioanc"]
+[ext_resource type="PackedScene" uid="uid://bqwlx6l8fu1i4" path="res://scenes/caveman_spawner.tscn" id="7_eafu8"]
+[ext_resource type="PackedScene" uid="uid://b3458n03htj8j" path="res://scenes/archer_spawner.tscn" id="8_i1d3c"]
 [ext_resource type="PackedScene" uid="uid://dljdaakwoupl3" path="res://scenes/archer.tscn" id="9_iih70"]
 [ext_resource type="PackedScene" uid="uid://b6k18m1n1bsu7" path="res://scenes/health_bar.tscn" id="10_jvini"]
 
@@ -785,6 +787,10 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_xmdss"]
 scenes/1/scene = ExtResource("3_pkbf4")
+scenes/2/scene = ExtResource("7_eafu8")
+scenes/2/display_placeholder = ExtResource("7_eafu8")
+scenes/3/scene = ExtResource("8_i1d3c")
+scenes/3/display_placeholder = ExtResource("8_i1d3c")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mj60d"]
 
@@ -983,7 +989,7 @@ death_screen = ExtResource("2_krwgu")
 
 [node name="TileMaps" type="Node2D" parent="." node_paths=PackedStringArray("level_layers")]
 script = ExtResource("1_4y28u")
-level_layers = [NodePath("TileMapLayer2"), NodePath("TileMapLayer3")]
+level_layers = [NodePath("EnemyWave1"), NodePath("EnemyWave2")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="TileMaps"]
 z_index = -1
@@ -999,6 +1005,16 @@ metadata/_edit_lock_ = true
 
 [node name="TileMapLayer3" type="TileMapLayer" parent="TileMaps"]
 tile_map_data = PackedByteArray("AADw//n/BAAFAAEAAADz//f/BAAFAAEAAAD2//n/BAAFAAEAAADw//f/BAAGAAEAAADz//n/BAAGAAEAAAD2//f/BAAGAAEAAADw//v/BAAGAAEAAAD2//v/BAAGAAEAAADz//v/BAAFAAEAAADu/wYAAwACAAgAAADu/wcAAQAAAAMAAADx/wkAAwADAAwAAADx/woAAwADAA0AAADy/wYAAwACAAgAAADy/wcAAQAAAAMAAADy/wgAAwAEAAsAAADy/wkAAwAEAAwAAADy/woAAwAEAA0AAADz/wkAAwAFAAwAAADz/woAAwAFAA0AAAD2/wYAAwACAAgAAAD2/wcAAQAAAAMAAAAFAPb/AwAEAAQAAAAFAPf/AwAEAAUAAAAFAPn/AwAEAAQAAAAFAPr/AwAEAAUAAAAFAPz/AwAEAAQAAAAFAP3/AwAEAAUAAAAKAPb/AwAEAAQAAAAKAPf/AwAEAAUAAAAKAPn/AwAEAAQAAAAKAPr/AwAEAAUAAAAKAPz/AwAEAAQAAAAKAP3/AwAEAAUAAAAAAPb/AwAEAAQAAAAAAPf/AwAEAAUAAAAAAPn/AwAEAAQAAAAAAPr/AwAEAAUAAAAAAPz/AwAEAAQAAAAAAP3/AwAEAAUAAAABAPb/AwAFAAQAAAABAPf/AwAFAAUAAAABAPn/AwAFAAQAAAABAPr/AwAFAAUAAAABAPz/AwAFAAQAAAABAP3/AwAFAAUAAAAGAPb/AwAFAAQAAAAGAPf/AwAFAAUAAAAGAPn/AwAFAAQAAAAGAPr/AwAFAAUAAAAGAPz/AwAFAAQAAAAGAP3/AwAFAAUAAAALAPb/AwAFAAQAAAALAPf/AwAFAAUAAAALAPn/AwAFAAQAAAALAPr/AwAFAAUAAAALAPz/AwAFAAQAAAALAP3/AwAFAAUAAAABAAcAAAAmAAEAAAABAAgAAAAmAAIAAAACAAcAAAAnAAEAAAACAAgAAAAnAAIAAAAEAAkAAAAmAAEAAAAEAAoAAAAmAAIAAAAFAAkAAAAnAAEAAAAFAAoAAAAnAAIAAAAHAAcAAAAmAAEAAAAHAAgAAAAmAAIAAAAIAAcAAAAnAAEAAAAIAAgAAAAnAAIAAAAMAAkAAAAmAAEAAAAMAAoAAAAmAAIAAAANAAkAAAAnAAEAAAANAAoAAAAnAAIAAAAEAAMAAAAmAAEAAAAEAAQAAAAmAAIAAAAFAAMAAAAnAAEAAAAFAAQAAAAnAAIAAAAMAAMAAAAmAAEAAAAMAAQAAAAmAAIAAAANAAMAAAAnAAEAAAANAAQAAAAnAAIAAAAIAAEAAAAmAAEAAAAIAAIAAAAmAAIAAAAJAAEAAAAnAAEAAAAJAAIAAAAnAAIAAAD//wQAAAAmAAEAAAD//wUAAAAmAAIAAAAAAAQAAAAnAAEAAAAAAAUAAAAnAAIAAAAJAAQAAAAmAAEAAAAJAAUAAAAmAAIAAAAKAAQAAAAnAAEAAAAKAAUAAAAnAAIAAAD//woAAAAmAAEAAAD//wsAAAAmAAIAAAAAAAoAAAAnAAEAAAAAAAsAAAAnAAIAAAAFAAYAAAAjAAAAAAAHAAQAAAAjAAAAAAALAAcAAAAjAAAAAAANAAYAAAAkAAAAAAAOAAYAAAAlAAAAAAABAAMAAAAkAAAAAAACAAMAAAAlAAAAAAACAAsAAAAkAAAAAAADAAsAAAAlAAAAAAA=")
+tile_set = SubResource("TileSet_jkjmu")
+metadata/_edit_lock_ = true
+
+[node name="EnemyWave1" type="TileMapLayer" parent="TileMaps"]
+tile_map_data = PackedByteArray("AAD6//z/AgAAAAAAAgD5//z/AgAAAAAAAgA=")
+tile_set = SubResource("TileSet_jkjmu")
+metadata/_edit_lock_ = true
+
+[node name="EnemyWave2" type="TileMapLayer" parent="TileMaps"]
+tile_map_data = PackedByteArray("AAD5/wQAAgAAAAAAAwD6/wQAAgAAAAAAAwA=")
 tile_set = SubResource("TileSet_jkjmu")
 metadata/_edit_lock_ = true
 
