@@ -9,6 +9,7 @@ func _ready() -> void:
 		if sibling is TileMapLayer:
 			all_layers.append(sibling)
 	higher_layers = all_layers.slice(all_layers.find(self)+1)
+	
 
 func _use_tile_data_runtime_update(coords: Vector2i) -> bool:
 	for other_layer in higher_layers:

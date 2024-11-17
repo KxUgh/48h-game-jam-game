@@ -137,7 +137,7 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1r14k"]
 
-[node name="Archer" type="CharacterBody2D" node_paths=PackedStringArray("nav_agent", "nav_timer", "sprite", "bow")]
+[node name="Archer" type="CharacterBody2D" node_paths=PackedStringArray("nav_agent", "nav_timer", "sprite", "bow") groups=["Enemies"]]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_do7yj")
@@ -163,6 +163,7 @@ shape = SubResource("RectangleShape2D_1r14k")
 weapon_owner = NodePath("..")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+avoidance_enabled = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.25
