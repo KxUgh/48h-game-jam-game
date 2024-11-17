@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bl4jgjvpbyvha" path="res://scenes/spikes.tscn" id="3_pkbf4"]
 [ext_resource type="PackedScene" uid="uid://by2vub21vtxyo" path="res://scenes/player.tscn" id="3_t447v"]
 [ext_resource type="Script" path="res://scripts/navigation_layer.gd" id="4_c6f0d"]
-[ext_resource type="PackedScene" uid="uid://bq7oyaqns0ca5" path="res://scenes/health_pickup.tscn" id="5_u1lpl"]
+[ext_resource type="PackedScene" path="res://scenes/health_pickup.tscn" id="5_u1lpl"]
 [ext_resource type="Texture2D" uid="uid://txd3dsmwsatl" path="res://assets/dungeontemple/B32x32.png" id="5_uvg6y"]
 [ext_resource type="Texture2D" uid="uid://chescnt1putfh" path="res://assets/futuretileset.png" id="6_ioanc"]
 [ext_resource type="PackedScene" uid="uid://bqwlx6l8fu1i4" path="res://scenes/caveman_spawner.tscn" id="7_eafu8"]
@@ -982,6 +982,12 @@ sources/1 = SubResource("TileSetAtlasSource_iis1x")
 sources/3 = SubResource("TileSetAtlasSource_1tcrp")
 sources/4 = SubResource("TileSetAtlasSource_ycwmw")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_i24i4"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8qbjn"]
+distance = 7.0
+
 [node name="RootNode" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_ud8oe")
 player = NodePath("Player")
@@ -1046,3 +1052,29 @@ offset_top = 3.0
 offset_right = -5.0
 offset_bottom = -161.0
 player = NodePath("../../Player")
+
+[node name="WorldBorder" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBorder"]
+position = Vector2(0, -363)
+shape = SubResource("WorldBoundaryShape2D_i24i4")
+
+[node name="WorldBorder2" type="StaticBody2D" parent="."]
+position = Vector2(0, 423)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBorder2"]
+shape = SubResource("WorldBoundaryShape2D_8qbjn")
+
+[node name="WorldBorder3" type="StaticBody2D" parent="."]
+position = Vector2(519, 0)
+rotation = -1.57079
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBorder3"]
+shape = SubResource("WorldBoundaryShape2D_8qbjn")
+
+[node name="WorldBorder4" type="StaticBody2D" parent="."]
+position = Vector2(-647, 0)
+rotation = 1.57079
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBorder4"]
+shape = SubResource("WorldBoundaryShape2D_8qbjn")
