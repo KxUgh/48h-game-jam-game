@@ -775,7 +775,6 @@ scenes/3/scene = ExtResource("8_i1d3c")
 scenes/4/scene = ExtResource("9_j2t2v")
 scenes/5/scene = ExtResource("5_u1lpl")
 scenes/6/scene = ExtResource("10_grif5")
-scenes/6/display_placeholder = ExtResource("10_grif5")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mj60d"]
 
