@@ -20,7 +20,3 @@ func change_level_appearance() -> void:
 	level_index += 1
 	await get_tree().physics_frame
 	SignalBus.spawn_enemies.emit()
-
-
-func _process(_delta: float) -> void:
-	print(len(level_layers))
