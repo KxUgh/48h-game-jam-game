@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cdve845fvcwuf" path="res://assets/OuterTileset.png" id="1_1irw7"]
 [ext_resource type="Script" path="res://scripts/tile_maps.gd" id="1_4y28u"]
-[ext_resource type="Script" path="res://scenes/main.gd" id="1_ud8oe"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_ud8oe"]
 [ext_resource type="PackedScene" uid="uid://epqooxq4iwgs" path="res://scenes/death_screen.tscn" id="2_krwgu"]
 [ext_resource type="PackedScene" uid="uid://i08j2b1vco1c" path="res://scenes/caveman.tscn" id="2_to06s"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="2_y1ld6"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bl4jgjvpbyvha" path="res://scenes/spikes.tscn" id="3_pkbf4"]
 [ext_resource type="PackedScene" uid="uid://by2vub21vtxyo" path="res://scenes/player.tscn" id="3_t447v"]
 [ext_resource type="Script" path="res://scripts/navigation_layer.gd" id="4_c6f0d"]
-[ext_resource type="PackedScene" path="res://scenes/health_pickup.tscn" id="5_u1lpl"]
+[ext_resource type="PackedScene" uid="uid://bq7oyaqns0ca5" path="res://scenes/health_pickup.tscn" id="5_u1lpl"]
 [ext_resource type="Texture2D" uid="uid://txd3dsmwsatl" path="res://assets/dungeontemple/B32x32.png" id="5_uvg6y"]
 [ext_resource type="Texture2D" uid="uid://chescnt1putfh" path="res://assets/futuretileset.png" id="6_ioanc"]
 [ext_resource type="PackedScene" uid="uid://dljdaakwoupl3" path="res://scenes/archer.tscn" id="9_iih70"]
