@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3458n03htj8j"]
+[gd_scene load_steps=3 format=3 uid="uid://cv04oau5k6h22"]
 
 [ext_resource type="Script" path="res://scripts/spawner.gd" id="1_d0le0"]
 [ext_resource type="PackedScene" uid="uid://dljdaakwoupl3" path="res://scenes/archer.tscn" id="2_18uub"]
