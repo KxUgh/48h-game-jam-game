@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://bu2vv3yml2k7d"]
+[gd_scene load_steps=55 format=4 uid="uid://bu2vv3yml2k7d"]
 
 [ext_resource type="Texture2D" uid="uid://cdve845fvcwuf" path="res://assets/OuterTileset.png" id="1_1irw7"]
 [ext_resource type="Script" path="res://scripts/tile_maps.gd" id="1_4y28u"]
@@ -13,10 +13,12 @@
 [ext_resource type="PackedScene" path="res://scenes/health_pickup.tscn" id="5_u1lpl"]
 [ext_resource type="Texture2D" uid="uid://txd3dsmwsatl" path="res://assets/dungeontemple/B32x32.png" id="5_uvg6y"]
 [ext_resource type="Texture2D" uid="uid://chescnt1putfh" path="res://assets/futuretileset.png" id="6_ioanc"]
-[ext_resource type="PackedScene" uid="uid://bqwlx6l8fu1i4" path="res://scenes/caveman_spawner.tscn" id="7_eafu8"]
-[ext_resource type="PackedScene" uid="uid://b3458n03htj8j" path="res://scenes/archer_spawner.tscn" id="8_i1d3c"]
+[ext_resource type="PackedScene" path="res://scenes/caveman_spawner.tscn" id="7_eafu8"]
+[ext_resource type="PackedScene" uid="uid://cv04oau5k6h22" path="res://scenes/archer_spawner.tscn" id="8_i1d3c"]
 [ext_resource type="PackedScene" uid="uid://dljdaakwoupl3" path="res://scenes/archer.tscn" id="9_iih70"]
+[ext_resource type="PackedScene" uid="uid://djoqsd0l6a6tu" path="res://scenes/cannoneer_spawner.tscn" id="9_j2t2v"]
 [ext_resource type="PackedScene" uid="uid://b6k18m1n1bsu7" path="res://scenes/health_bar.tscn" id="10_jvini"]
+[ext_resource type="PackedScene" uid="uid://b347urc82s4l7" path="res://scenes/cannoneer.tscn" id="18_6218l"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_yyi8j"]
 vertices = PackedVector2Array(16, 16, -16, 16, -16, -16, 16, -16)
@@ -791,6 +793,10 @@ scenes/2/scene = ExtResource("7_eafu8")
 scenes/2/display_placeholder = ExtResource("7_eafu8")
 scenes/3/scene = ExtResource("8_i1d3c")
 scenes/3/display_placeholder = ExtResource("8_i1d3c")
+scenes/4/scene = ExtResource("9_j2t2v")
+scenes/4/display_placeholder = ExtResource("9_j2t2v")
+scenes/5/scene = ExtResource("5_u1lpl")
+scenes/5/display_placeholder = ExtResource("5_u1lpl")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mj60d"]
 
@@ -1015,12 +1021,17 @@ tile_set = SubResource("TileSet_jkjmu")
 metadata/_edit_lock_ = true
 
 [node name="EnemyWave1" type="TileMapLayer" parent="TileMaps"]
-tile_map_data = PackedByteArray("AAD6//z/AgAAAAAAAgD5//z/AgAAAAAAAgA=")
+tile_map_data = PackedByteArray("AAD6//z/AgAAAAAAAgD5//z/AgAAAAAAAgDy/wsAAgAAAAAABQABAAQAAgAAAAAAAgACAAIAAgAAAAAAAgA=")
 tile_set = SubResource("TileSet_jkjmu")
 metadata/_edit_lock_ = true
 
 [node name="EnemyWave2" type="TileMapLayer" parent="TileMaps"]
-tile_map_data = PackedByteArray("AAD5/wQAAgAAAAAAAwD6/wQAAgAAAAAAAwA=")
+tile_map_data = PackedByteArray("AAABAPv/AgAAAAAAAwAHAP3/AgAAAAAAAwA=")
+tile_set = SubResource("TileSet_jkjmu")
+metadata/_edit_lock_ = true
+
+[node name="EnemyWave3" type="TileMapLayer" parent="TileMaps"]
+tile_map_data = PackedByteArray("AADv/wMAAgAAAAAABAD2/woAAgAAAAAABAA=")
 tile_set = SubResource("TileSet_jkjmu")
 metadata/_edit_lock_ = true
 
@@ -1037,9 +1048,6 @@ position = Vector2(-106, 2)
 
 [node name="Caveman" parent="." instance=ExtResource("2_to06s")]
 position = Vector2(63, -28)
-
-[node name="HealthPickup" parent="." instance=ExtResource("5_u1lpl")]
-position = Vector2(0, 65)
 
 [node name="Archer" parent="." instance=ExtResource("9_iih70")]
 position = Vector2(-109, 57)
@@ -1078,3 +1086,5 @@ rotation = 1.57079
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBorder4"]
 shape = SubResource("WorldBoundaryShape2D_8qbjn")
+
+[node name="Cannoneer" parent="." instance=ExtResource("18_6218l")]

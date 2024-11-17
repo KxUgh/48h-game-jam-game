@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb0we8uiyaneu"]
+
+[ext_resource type="Script" path="res://scripts/cannon.gd" id="1_lq7pi"]
+[ext_resource type="PackedScene" uid="uid://b1io717w8lvgw" path="res://scenes/cannonball.tscn" id="2_6qbfw"]
+
+[node name="Cannon" type="Node2D"]
+script = ExtResource("1_lq7pi")
+shot = ExtResource("2_6qbfw")
+damage = 10.0
