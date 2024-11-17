@@ -10,14 +10,14 @@
 [ext_resource type="PackedScene" uid="uid://bl4jgjvpbyvha" path="res://scenes/spikes.tscn" id="3_pkbf4"]
 [ext_resource type="PackedScene" uid="uid://by2vub21vtxyo" path="res://scenes/player.tscn" id="3_t447v"]
 [ext_resource type="Script" path="res://scripts/navigation_layer.gd" id="4_c6f0d"]
-[ext_resource type="PackedScene" path="res://scenes/health_pickup.tscn" id="5_u1lpl"]
+[ext_resource type="PackedScene" uid="uid://bq7oyaqns0ca5" path="res://scenes/health_pickup.tscn" id="5_u1lpl"]
 [ext_resource type="Texture2D" uid="uid://txd3dsmwsatl" path="res://assets/dungeontemple/B32x32.png" id="5_uvg6y"]
 [ext_resource type="Texture2D" uid="uid://chescnt1putfh" path="res://assets/futuretileset.png" id="6_ioanc"]
-[ext_resource type="PackedScene" path="res://scenes/caveman_spawner.tscn" id="7_eafu8"]
+[ext_resource type="PackedScene" uid="uid://bqwlx6l8fu1i4" path="res://scenes/caveman_spawner.tscn" id="7_eafu8"]
 [ext_resource type="PackedScene" uid="uid://cv04oau5k6h22" path="res://scenes/archer_spawner.tscn" id="8_i1d3c"]
 [ext_resource type="PackedScene" uid="uid://dljdaakwoupl3" path="res://scenes/archer.tscn" id="9_iih70"]
 [ext_resource type="PackedScene" uid="uid://cyviaylrxbsqr" path="res://scenes/cannoneer_spawner.tscn" id="9_j2t2v"]
-[ext_resource type="PackedScene" uid="uid://b6k18m1n1bsu7" path="res://scenes/health_bar.tscn" id="10_jvini"]
+[ext_resource type="PackedScene" path="res://scenes/health_bar.tscn" id="10_jvini"]
 [ext_resource type="PackedScene" uid="uid://kktxsuylt1vm" path="res://scenes/cannoneer.tscn" id="18_6218l"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_yyi8j"]
@@ -790,13 +790,9 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_xmdss"]
 scenes/1/scene = ExtResource("3_pkbf4")
 scenes/2/scene = ExtResource("7_eafu8")
-scenes/2/display_placeholder = ExtResource("7_eafu8")
 scenes/3/scene = ExtResource("8_i1d3c")
-scenes/3/display_placeholder = ExtResource("8_i1d3c")
 scenes/4/scene = ExtResource("9_j2t2v")
-scenes/4/display_placeholder = ExtResource("9_j2t2v")
 scenes/5/scene = ExtResource("5_u1lpl")
-scenes/5/display_placeholder = ExtResource("5_u1lpl")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mj60d"]
 
@@ -994,10 +990,10 @@ normal = Vector2(0, 1)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8qbjn"]
 distance = 7.0
 
-[node name="RootNode" type="Node2D" node_paths=PackedStringArray("player")]
+[node name="RootNode" type="Node2D" node_paths=PackedStringArray("player", "death_screen")]
 script = ExtResource("1_ud8oe")
 player = NodePath("Player")
-death_screen = ExtResource("2_krwgu")
+death_screen = NodePath("CanvasLayer2/DeathScreen")
 
 [node name="TileMaps" type="Node2D" parent="." node_paths=PackedStringArray("level_layers")]
 script = ExtResource("1_4y28u")
@@ -1060,6 +1056,11 @@ offset_top = 3.0
 offset_right = -5.0
 offset_bottom = -161.0
 player = NodePath("../../Player")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="DeathScreen" parent="CanvasLayer2" instance=ExtResource("2_krwgu")]
+visible = false
 
 [node name="WorldBorder" type="StaticBody2D" parent="."]
 
