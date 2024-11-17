@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://csb5h5hwq3d7j" path="res://assets/cannon_attack.png" id="2_npirs"]
 [ext_resource type="Texture2D" uid="uid://c1o37ademol7r" path="res://assets/cannon_hit.png" id="3_y5mvf"]
 [ext_resource type="Texture2D" uid="uid://peijt6xpripo" path="res://assets/cannon_idle.png" id="4_x8x1p"]
-[ext_resource type="PackedScene" uid="uid://csh1ag7o72uyi" path="res://scenes/cannon.tscn" id="6_1s78o"]
+[ext_resource type="PackedScene" uid="uid://cb0we8uiyaneu" path="res://scenes/cannon.tscn" id="6_1s78o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bmq8c"]
 atlas = ExtResource("2_npirs")
@@ -120,7 +120,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1r14k"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bmtew"]
+height = 34.0
 
 [node name="Cannoneer" type="CharacterBody2D" node_paths=PackedStringArray("nav_agent", "nav_timer", "sprite", "bow") groups=["Enemies"]]
 collision_layer = 4
@@ -131,9 +132,9 @@ nav_timer = NodePath("Timer")
 sprite = NodePath("AnimatedSprite2D")
 bow = NodePath("Cannon")
 desired_distance = 100.0
-speed = 40.0
-max_health = 5.0
-attack_cooldown = 2.0
+speed = 5.0
+max_health = 25.0
+attack_cooldown = 5.0
 damage_delay = 1.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -142,7 +143,8 @@ animation = &"walk"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_1r14k")
+position = Vector2(-18, 0)
+shape = SubResource("CapsuleShape2D_bmtew")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 avoidance_enabled = true

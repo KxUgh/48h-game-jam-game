@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b04fvwk80p3q7" path="res://assets/caveman_walk.png" id="3_1lo48"]
 [ext_resource type="Texture2D" uid="uid://caudn3n72emrj" path="res://assets/caveman_hit.png" id="3_3twui"]
 [ext_resource type="PackedScene" uid="uid://kvhgs413g3gg" path="res://scenes/sword.tscn" id="3_nvu0n"]
-[ext_resource type="PackedScene" uid="uid://cgcoauqh6nqty" path="res://scenes/club_attack.tscn" id="4_ik4oq"]
+[ext_resource type="PackedScene" path="res://scenes/club_attack.tscn" id="4_ik4oq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ttnv6"]
 radius = 8.0
@@ -151,8 +151,8 @@ nav_timer = NodePath("NavTimer")
 sprite = NodePath("AnimatedSprite2D")
 club = NodePath("Sword")
 attack_distance = 40.0
-speed = 50.0
-max_health = 10.0
+speed = 60.0
+max_health = 25.0
 attack_cooldown = 2.0
 damage_delay = 1.0
 
@@ -175,4 +175,4 @@ autostart = true
 [node name="Sword" parent="." node_paths=PackedStringArray("weapon_owner") instance=ExtResource("3_nvu0n")]
 slash = ExtResource("4_ik4oq")
 weapon_owner = NodePath("..")
-damage = 2.0
+damage = 3.0
