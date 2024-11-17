@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://d1s8lhlk85jrv" path="res://assets/beam.png" id="2_r0k81"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ooub3"]
-radius = 9.0
-height = 18.0
+radius = 12.0
+height = 24.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l7tpo"]
 atlas = ExtResource("2_r0k81")
