@@ -8,7 +8,7 @@ func _ready():
 	exit_button.button_up.connect(on_exit_button_pressed)
 
 func on_menu_button_pressed() -> void:
-	pass
+	get_tree().reload_current_scene()
 	
 func on_exit_button_pressed() -> void:
 	get_tree().quit()

@@ -2,7 +2,7 @@ class_name RootNode
 extends Node2D
 
 @export var player: Player
-@export var death_screen: PackedScene
+@export var death_screen: Control
 
 func _ready() -> void:
 	player.player_died.connect(deadify)
@@ -15,4 +15,4 @@ func _physics_process(delta: float) -> void:
 
 func deadify() -> void:
 	await get_tree().create_timer(2.0).timeout
-	get_tree().change_scene_to_packed(death_screen)
+	death_screen.visible = true
