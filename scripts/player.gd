@@ -2,6 +2,7 @@ class_name Player
 extends Entity
 
 signal health_changed()
+signal player_died()
 
 @export var wand: Weapon
 @export var base_speed: float
@@ -35,6 +36,8 @@ func take_damage(damage: float) -> bool:
 	health -= damage
 	health = clampf(health,0,max_health)
 	health_changed.emit()
+	if health <= 0:
+		player_died.emit()
 	return true
 	
 func heal(amount: float) -> void:
