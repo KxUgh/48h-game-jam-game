@@ -14,5 +14,5 @@ func _physics_process(delta: float) -> void:
 
 
 func deadify() -> void:
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(0.1).timeout
 	death_screen.visible = true

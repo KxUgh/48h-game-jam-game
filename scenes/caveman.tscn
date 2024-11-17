@@ -157,9 +157,11 @@ attack_cooldown = 2.0
 damage_delay = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -15)
 shape = SubResource("CapsuleShape2D_ttnv6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -15)
 sprite_frames = SubResource("SpriteFrames_oy70h")
 animation = &"hit"
 autoplay = "idle"
@@ -173,6 +175,7 @@ wait_time = 0.25
 autostart = true
 
 [node name="Sword" parent="." node_paths=PackedStringArray("weapon_owner") instance=ExtResource("3_nvu0n")]
+position = Vector2(0, -15)
 slash = ExtResource("4_ik4oq")
 weapon_owner = NodePath("..")
 damage = 3.0
