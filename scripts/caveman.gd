@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 		nav_agent.set_velocity(Vector2.ZERO)
 		
 	if velocity.x != 0:
-		sprite.scale.x = sign(velocity.x)
+		sprite.scale.x = sign(target.position.x-position.x)
 	
 	if velocity.length() > 0:
 		request_animation_change("walk")

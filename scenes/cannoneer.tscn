@@ -1,14 +1,155 @@
-[gd_scene format=3 uid="uid://daynbfj5kp5sm"]
+[gd_scene load_steps=21 format=3 uid="uid://kktxsuylt1vm"]
 
-[node name="Cannoneer" type="CharacterBody2D"]
-position = Vector2(13, 19)
+[ext_resource type="Script" path="res://scripts/archer.gd" id="1_v8oqm"]
+[ext_resource type="Texture2D" uid="uid://csb5h5hwq3d7j" path="res://assets/cannon_attack.png" id="2_npirs"]
+[ext_resource type="Texture2D" uid="uid://c1o37ademol7r" path="res://assets/cannon_hit.png" id="3_y5mvf"]
+[ext_resource type="Texture2D" uid="uid://peijt6xpripo" path="res://assets/cannon_idle.png" id="4_x8x1p"]
+[ext_resource type="PackedScene" uid="uid://csh1ag7o72uyi" path="res://scenes/cannon.tscn" id="6_1s78o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmq8c"]
+atlas = ExtResource("2_npirs")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xali4"]
+atlas = ExtResource("2_npirs")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcvmi"]
+atlas = ExtResource("2_npirs")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tk07u"]
+atlas = ExtResource("3_y5mvf")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shlip"]
+atlas = ExtResource("3_y5mvf")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6oie6"]
+atlas = ExtResource("3_y5mvf")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rornx"]
+atlas = ExtResource("3_y5mvf")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqse8"]
+atlas = ExtResource("4_x8x1p")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43y6s"]
+atlas = ExtResource("4_x8x1p")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ery57"]
+atlas = ExtResource("4_x8x1p")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3r4jd"]
+atlas = ExtResource("4_x8x1p")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqaav"]
+atlas = ExtResource("4_x8x1p")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ne2gt"]
+atlas = ExtResource("4_x8x1p")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8jxr7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmq8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xali4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcvmi")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tk07u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shlip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6oie6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rornx")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqse8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43y6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ery57")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3r4jd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fqaav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ne2gt")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1r14k"]
+
+[node name="Cannoneer" type="CharacterBody2D" node_paths=PackedStringArray("nav_agent", "nav_timer", "sprite", "bow") groups=["Enemies"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_v8oqm")
+nav_agent = NodePath("NavigationAgent2D")
+nav_timer = NodePath("Timer")
+sprite = NodePath("AnimatedSprite2D")
+bow = NodePath("Cannon")
+desired_distance = 100.0
+speed = 40.0
+max_health = 5.0
+attack_cooldown = 2.0
+damage_delay = 1.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8jxr7")
+animation = &"walk"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-
-[node name="Cannon" type="Node2D" parent="."]
+shape = SubResource("RectangleShape2D_1r14k")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+avoidance_enabled = true
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[node name="Cannon" parent="." node_paths=PackedStringArray("weapon_owner") instance=ExtResource("6_1s78o")]
+weapon_owner = NodePath("..")

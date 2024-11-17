@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cl1f2pxxngx43"]
+
+[ext_resource type="Script" path="res://scripts/cannonball.gd" id="1_eradc"]
+[ext_resource type="Texture2D" uid="uid://bfeftjb4y34we" path="res://assets/cannonball.png" id="2_83swe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwna2"]
+size = Vector2(6, 4)
+
+[node name="Cannonball" type="Area2D"]
+top_level = true
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_eradc")
+speed = 500.0
+max_duration = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12, 0)
+shape = SubResource("RectangleShape2D_nwna2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_83swe")
